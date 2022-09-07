@@ -26,7 +26,16 @@
 
                 </form>
 
-                <form action="/" method="POST">
+                	{{#each user}}
+				<p>User {{username}} has been allocated!</p>
+
+
+				{{/each}}
+
+                
+				{{!-- CY 124-245 --}}
+
+                {{!-- <form action="/" method="POST">
                  <h1 class="text-center">Phone bill widget</h1><br>
                     
                     <label for="">Username</label>
@@ -36,7 +45,7 @@
                     <textarea name="getString" id="" cols="30" rows="10">Usage string</textarea>
 
                      <button class="addUser btn blue" type="submit">Calculate total phone bill</button>
-                </form>
+                </form> --}}
             </div>
 </body>
 </html>
