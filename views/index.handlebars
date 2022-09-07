@@ -7,6 +7,36 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Zamo</p>
+             <div class="nine columns box center">
+                <form id="home" action="/user" method="POST">
+                    <h1 class="text-center">Allocate price plan to username</h1><br>
+                    
+                    <label for="">Username</label>
+                    <input type="text" name="setUsername" placeholder="Please enter username">
+                    <label for="plans">Choose a plan:</label>
+
+                    <select name="setPriceplan" id="plans">
+                    <option value="sms101"></option>
+                    <option value="sms101">sms101</option>
+                    <option value="call201">call201</option>
+                    <option value="anytime_plan">anytime_plan</option>
+                   
+                    </select>
+                    <button class="addUser btn blue" type="submit">Allocate</button>
+
+                </form>
+
+                <form action="/" method="POST">
+                 <h1 class="text-center">Phone bill widget</h1><br>
+                    
+                    <label for="">Username</label>
+                    <input type="text" name="setUsername" placeholder="Please enter username">
+
+                    {{!-- <label for="">Usage string</label> --}}
+                    <textarea name="getString" id="" cols="30" rows="10">Usage string</textarea>
+
+                     <button class="addUser btn blue" type="submit">Calculate total phone bill</button>
+                </form>
+            </div>
 </body>
 </html>

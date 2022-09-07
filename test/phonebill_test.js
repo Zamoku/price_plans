@@ -11,19 +11,16 @@ const db = pgp(connectionString)
 describe('The basic database web app', function () {
 
 
-    it('should insert a new user and a price plan into the db test', async function () {
+    it('should insert a new user into the db test', async function () {
 
 
-        let registration = Registration(db);
-        let reg = await registration.addReg(
-            'CA 152-563'
+        let priceplan = Priceplan(db);
+        let user = await priceplan.addUser(
+            'Nomzamo', 'sms101'
         );
 
-        let reg2 = await registration.addReg(
-            'CA 152-123'
-        );
-        let getReg = await registration.displayReg()
-        assert.deepEqual([{registration_num: "CA 152-123"}, {registration_num: 'CA 152-563'}], getReg);
+        let getUser = await priceplan.displayUser()
+        assert.deepEqual([{username: "Nomzamo", plan_name: 'sms101'}], getUser);
         
 
     });
@@ -72,7 +69,7 @@ describe('The basic database web app', function () {
     //});
     afterEach('Drop all tables', async function () {
         //clean the tables after each test run
-        await db.query("delete from Users;");
+        await db.query("delete from users;");
 
     });
 

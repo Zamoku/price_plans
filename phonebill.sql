@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS price_plan (
 
 CREATE TABLE IF NOT EXISTS users(
    id serial primary key,
-   name VARCHAR(255) NOT NULL,
    username VARCHAR(255) NOT NUll,
    price_planId INT,
    FOREIGN KEY(price_planId) REFERENCES price_plan(id)

@@ -27,7 +27,7 @@ const db = pgp({
 });
 
 const priceplan = Priceplan(db)
-const PriceplanRoutes = PriceplanRoutes(priceplan)
+const priceplanRoutes = PriceplanRoutes(priceplan)
 
 const app = express();
 
@@ -36,14 +36,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //parse application/json
  app.use(bodyParser.json());
 
-// app.use(session({
-//     secret: "my price plan secret",
-//     cookie: {
-//         maxAge: 1000 * 36000
-//       },
-//     resave: false,
-//     saveUninitialized: true
-// }));
+app.use(session({
+    secret: "my price plan secret",
+    cookie: {
+        maxAge: 1000 * 36000
+      },
+    resave: false,
+    saveUninitialized: true
+}));
 
 app.use(flash());
 
@@ -52,12 +52,9 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
-app.get('/', registrationRoutes.showReg);
-// app.post('/registr', registrationRoutes.addRegNum);
-// app.get('/reset', registrationRoutes.deleteAll);
-// app.get('/show', registrationRoutes.showReg);
-// // app.get('/reg_number/:reg_number', registrationRoutes.showReg);
-// app.post('/filter', registrationRoutes.filterReg);
+//  app.get('/', priceplanRoutes.add);
+ app.post('/user', priceplanRoutes.add);
+ app.get('/', priceplanRoutes.show);
 
 
 
