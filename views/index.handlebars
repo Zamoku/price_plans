@@ -7,33 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-             <div class="nine columns box center">
-                <form id="home" action="/user" method="POST">
-                    <h1 class="text-center">Allocate price plan to username</h1><br>
-                    
-                    <label for="">Username</label>
-                    <input type="text" name="setUsername" placeholder="Please enter username">
-                    <label for="plans">Choose a plan:</label>
+    <div class="m-5 pb-5">
+    <h3 class="">Phone bill widget</h3>   
+    <h4 class="pt-1">Calculate total phone bill for user</h3><br>
 
-                    <select name="setPriceplan" id="plans">
-                    <option value="sms101"></option>
-                    <option value="sms101">sms101</option>
-                    <option value="call201">call201</option>
-                    <option value="anytime_plan">anytime_plan</option>
-                   
-                    </select>
-                    <button class="addUser btn blue" type="submit">Allocate</button>
+<div class="flex flex-row gap-5">
+    <label class="" for="">Username</label>
+    <input class="flex flex-wrap" type="text" name="username" placeholder="Please enter username">
+</div><br>
 
-                </form>
+<div class="flex flex-row gap-5">
+    <label class="" for="">Usage string</label>
+    <textarea class="flex flex-wrap" name="" id="" cols="20" rows="2"></textarea>
+</div><br>
+     <button class="" type="submit">Calculate total phone bill</button>
+     <br>
 
-                	{{#each user}}
-				<p>User {{username}} has been allocated!</p>
-
-
-				{{/each}}
-
-
-		
-            </div>
+<div class="flex flex-row gap-5 pb-5"></div>
+    <label class="" for="">Phone bill total</label>
+    <input type="text" name="username" disabled >
+</div>
+</div>
 </body>
 </html>

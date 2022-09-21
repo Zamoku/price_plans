@@ -1,0 +1,28 @@
+<div class="nine columns box center">
+                <form id="home" action="/user" method="POST">
+                    <h1 class="text-center underline text-2xl">Allocate price plan to username</h1><br>
+                    
+                    <label for="">Username</label>
+                    <input type="text" name="setUsername" placeholder="Please enter username">
+                    <label for="plans">Choose a plan:</label>
+
+                    <select name="setPriceplan" id="plans">
+                    <option value="sms101"></option>
+                    <option value="sms101">sms101</option>
+                    <option value="call201">call201</option>
+                    <option value="anytime_plan">anytime_plan</option>
+                   
+                    </select>
+                    <button class="addUser btn blue" type="submit">Allocate</button>
+
+                </form>
+
+                	{{#each user}}
+				<p>User {{username}} has been allocated!</p>
+
+
+				{{/each}}
+
+
+		
+            </div>

@@ -56,9 +56,7 @@ app.use(express.static('public'));
  app.post('/user', priceplanRoutes.add);
  app.get('/', priceplanRoutes.show);
 
-
-
-const PORT = process.env.PORT || 3034
+const PORT = process.env.PORT || 3033
 
 app.listen(PORT, function () {
     console.log('App started at port:', PORT)
